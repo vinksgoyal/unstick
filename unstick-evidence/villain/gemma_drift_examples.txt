@@ -1,0 +1,20 @@
+{"goal": "Start a creative portfolio", "state": {"minutes": 5, "energy": 1, "location": "home", "time": "22:30"}, "action": "Stand up and stretch for 30 seconds."}
+{"goal": "Start a creative portfolio", "state": {"minutes": 5, "energy": 1, "location": "home", "time": "22:30"}, "action": "Go to the kitchen and pour a glass of water."}
+{"goal": "Start a creative portfolio", "state": {"minutes": 5, "energy": 1, "location": "home", "time": "22:30"}, "action": "Pick up a pen and paper and start doodling for 5 minutes."}
+{"goal": "Start a creative portfolio", "state": {"minutes": 15, "energy": 2, "location": "home", "time": "21:30"}, "action": "Pick up a paintbrush and sketch the first thing that pops into your head. No pressure! Just let your hand move."}
+{"goal": "Start a creative portfolio", "state": {"minutes": 15, "energy": 2, "location": "home", "time": "21:30"}, "action": "Take a five-minute walk in your neighborhood and observe the details around you. Notice something interesting and try to capture it in your mind."}
+{"goal": "Start a creative portfolio", "state": {"minutes": 15, "energy": 2, "location": "home", "time": "21:30"}, "action": "Hold a stack of your favorite art books for a moment. Feel the weight and textures of the paper. Let the physical act bring you a moment of calm."}
+{"goal": "Start a creative portfolio", "state": {"minutes": 15, "energy": 3, "location": "home", "time": "19:45"}, "action": "Shuffle a deck of cards."}
+{"goal": "Start a creative portfolio", "state": {"minutes": 15, "energy": 3, "location": "home", "time": "19:45"}, "action": "Pick up a pen and a notebook and write down three things you enjoy doing."}
+{"goal": "Build an illustration portfolio", "state": {"minutes": 5, "energy": 1, "location": "home", "time": "22:30"}, "action": "Stand up and stretch for 5 minutes. Take a deep breath and then relax."}
+{"goal": "Build an illustration portfolio", "state": {"minutes": 5, "energy": 1, "location": "home", "time": "22:30"}, "action": "Wash your hands and then put on your favorite pair of shoes."}
+{"goal": "Build an illustration portfolio", "state": {"minutes": 5, "energy": 1, "location": "home", "time": "22:30"}, "action": "Turn on a calming playlist and do some simple stretches in the living room."}
+{"goal": "Build an illustration portfolio", "state": {"minutes": 15, "energy": 2, "location": "home", "time": "21:30"}, "action": "Take out a stack of your favorite art supplies from your desk drawer."}
+{"goal": "Build an illustration portfolio", "state": {"minutes": 15, "energy": 2, "location": "home", "time": "21:30"}, "action": "Get up and stretch for 1 minute."}
+{"goal": "Build an illustration portfolio", "state": {"minutes": 15, "energy": 2, "location": "home", "time": "21:30"}, "action": "Look at the sky through your window for 2 minutes."}
+{"goal": "Build an illustration portfolio", "state": {"minutes": 15, "energy": 3, "location": "home", "time": "19:45"}, "action": "Dust off a sketchbook"}
+{"goal": "Build an illustration portfolio", "state": {"minutes": 15, "energy": 3, "location": "home", "time": "19:45"}, "action": "Stand up and stretch for 5 minutes"}
+{"goal": "Build an illustration portfolio", "state": {"minutes": 15, "energy": 3, "location": "home", "time": "19:45"}, "action": "Open a window for fresh air and a change of perspective"}
+{"goal": "Share photography", "state": {"minutes": 5, "energy": 1, "location": "home", "time": "22:30"}, "action": "Stand and stretch for 1 minute.  This will help release tension in your body."}
+{"goal": "Share photography", "state": {"minutes": 5, "energy": 1, "location": "home", "time": "22:30"}, "action": "Reach for a random object in the room and pick it up for 1 minute. Look at it closely. This will help ground you in the present moment."}
+{"goal": "Share photography", "state": {"minutes": 5, "energy": 1, "location": "home", "time": "22:30"}, "action": "Pick up your phone and look at a photo you like, but didn't share yet. What's the story behind it?  How might you tell it to someone else?"}
