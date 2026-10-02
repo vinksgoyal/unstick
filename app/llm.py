@@ -25,7 +25,7 @@ class OllamaClient:
         response = httpx.post(
             f"{self.base_url}/api/generate",
             json={"model": self.model, "prompt": prompt, "stream": False, "format": "json"},
-            timeout=30,
+            timeout=180,
         )
         if not response.is_success:
             return []

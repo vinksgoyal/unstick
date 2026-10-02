@@ -19,7 +19,7 @@ def check(action: str, state: dict) -> dict:
     text = action.strip().lower()
     reasons: list[str] = []
     minutes = int(state.get("minutes", 5))
-    under_5 = minutes <= 5 and not re.search(r"\b(?:10|15|20|30|hour)\s*(?:minutes?|mins?)\b", text)
+    under_5 = not re.search(r"\b(?:10|15|20|30|45|60|hour|hours)\s*(?:minutes?|mins?)?\b", text)
     physical = not any(re.search(pattern, text) for pattern in THINKING_PATTERNS)
     no_decision = not any(re.search(pattern, text) for pattern in DECISION_PATTERNS)
     solo = not any(re.search(pattern, text) for pattern in OTHER_PERSON_PATTERNS)
