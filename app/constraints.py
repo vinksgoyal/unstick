@@ -18,7 +18,6 @@ def check(action: str, state: dict) -> dict:
     """Apply the five product constraints without calling a model."""
     text = action.strip().lower()
     reasons: list[str] = []
-    minutes = int(state.get("minutes", 5))
     under_5 = not re.search(r"\b(?:10|15|20|30|45|60|hour|hours)\s*(?:minutes?|mins?)?\b", text)
     physical = not any(re.search(pattern, text) for pattern in THINKING_PATTERNS)
     no_decision = not any(re.search(pattern, text) for pattern in DECISION_PATTERNS)
