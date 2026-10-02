@@ -1,0 +1,20 @@
+{"goal":"Start a creative portfolio","state":{"minutes":5,"energy":2,"location":"home","time":"21:30"},"action":"Open a note and type the title of one finished piece","scope_safe":true,"fail_type":null,"rewrite":null}
+{"goal":"Build an illustration portfolio","state":{"minutes":5,"energy":2},"action":"Sketch your homepage layout","scope_safe":false,"fail_type":"reveals_scope","rewrite":"Open your camera roll and save one finished illustration to an album called maybe."}
+{"goal":"Share photography","state":{"minutes":5,"energy":3},"action":"Save one finished photo","scope_safe":true,"fail_type":null,"rewrite":null}
+{"goal":"Start a music portfolio","state":{"minutes":5,"energy":1},"action":"Learn Ableton","scope_safe":false,"fail_type":"needs_new_skill","rewrite":"Open your music folder and rename one finished track."}
+{"goal":"Publish writing","state":{"minutes":5,"energy":2},"action":"Choose your best essay","scope_safe":false,"fail_type":"needs_decision","rewrite":"Open one existing essay and copy its title into a note."}
+{"goal":"Start ceramics portfolio","state":{"minutes":5,"energy":3},"action":"Photograph one finished piece","scope_safe":true,"fail_type":null,"rewrite":null}
+{"goal":"Start a design portfolio","state":{"minutes":5,"energy":2},"action":"Research portfolio examples","scope_safe":false,"fail_type":"reveals_scope","rewrite":"Open one finished design file and take a screenshot."}
+{"goal":"Start a writing portfolio","state":{"minutes":5,"energy":2},"action":"Open a blank note","scope_safe":true,"fail_type":null,"rewrite":null}
+{"goal":"Share illustration","state":{"minutes":5,"energy":2},"action":"Ask a friend to review it","scope_safe":false,"fail_type":"needs_other_person","rewrite":"Save one existing illustration in a folder called maybe."}
+{"goal":"Share photography","state":{"minutes":5,"energy":2},"action":"Curate a gallery","scope_safe":false,"fail_type":"reveals_scope","rewrite":"Rename one finished photo with today's date."}
+{"goal":"Start a ceramics portfolio","state":{"minutes":5,"energy":2},"action":"Open a folder and rename one image","scope_safe":true,"fail_type":null,"rewrite":null}
+{"goal":"Start an illustration portfolio","state":{"minutes":5,"energy":1},"action":"Create a brand system","scope_safe":false,"fail_type":"reveals_scope","rewrite":"Copy one finished illustration into a folder called maybe."}
+{"goal":"Share music","state":{"minutes":5,"energy":2},"action":"Save one audio file with a shorter name","scope_safe":true,"fail_type":null,"rewrite":null}
+{"goal":"Publish writing","state":{"minutes":5,"energy":1},"action":"Outline your book","scope_safe":false,"fail_type":"reveals_scope","rewrite":"Open one draft and copy one sentence into a note."}
+{"goal":"Start a design portfolio","state":{"minutes":5,"energy":3},"action":"Take a screenshot of one finished design","scope_safe":true,"fail_type":null,"rewrite":null}
+{"goal":"Start a photography portfolio","state":{"minutes":5,"energy":2},"action":"Learn Lightroom","scope_safe":false,"fail_type":"needs_new_skill","rewrite":"Open your photo folder and label one finished image."}
+{"goal":"Start a music portfolio","state":{"minutes":5,"energy":2},"action":"Ask a collaborator for a track","scope_safe":false,"fail_type":"needs_other_person","rewrite":"Open your audio folder and move one finished track."}
+{"goal":"Start a writing portfolio","state":{"minutes":5,"energy":3},"action":"Pick the strongest draft","scope_safe":false,"fail_type":"needs_decision","rewrite":"Open the first draft in your folder and save it as a copy."}
+{"goal":"Share ceramics","state":{"minutes":5,"energy":2},"action":"Photograph one finished ceramic piece","scope_safe":true,"fail_type":null,"rewrite":null}
+{"goal":"Start an illustration portfolio","state":{"minutes":5,"energy":2},"action":"Think about your visual identity","scope_safe":false,"fail_type":"not_physical","rewrite":"Open one finished illustration and save a duplicate."}

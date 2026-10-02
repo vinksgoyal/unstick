@@ -1,0 +1,12 @@
+:root { font: 16px system-ui, sans-serif; color: #27252a; background: #faf8f4; }
+body { max-width: 720px; margin: 0 auto; padding: 12vh 1.5rem; }
+h1 { font-size: 3rem; margin-bottom: .2rem; }
+.intro { color: #756d64; }
+textarea { box-sizing: border-box; width: 100%; min-height: 9rem; padding: 1rem; border: 1px solid #d5cec5; border-radius: 12px; font: inherit; }
+.state { display: flex; gap: 1rem; margin: 1rem 0; color: #756d64; }
+input { width: 4rem; padding: .4rem; border: 1px solid #d5cec5; border-radius: 6px; }
+button { padding: .8rem 1rem; border: 0; border-radius: 8px; background: #493d67; color: white; font-weight: 700; cursor: pointer; }
+#cards { display: grid; gap: 1rem; margin-top: 2rem; }
+.card { padding: 1.2rem; border-radius: 12px; background: white; box-shadow: 0 3px 12px #27252a12; }
+.card h2 { margin-top: 0; font-size: 1rem; color: #756d64; }
+.not-today { filter: blur(.5px); opacity: .55; }

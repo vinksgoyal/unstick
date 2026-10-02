@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: unstick-api
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: ENV
+        value: production
+  - type: static
+    name: unstick-web
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: frontend
+    envVars:
+      - key: API_URL
+        fromService:
+          type: web
+          name: unstick-api
+          property: host
