@@ -27,8 +27,12 @@ class OllamaClient:
             json={"model": self.model, "prompt": prompt, "stream": False, "format": "json"},
             timeout=30,
         )
-        response.raise_for_status()
-        data = response.json()
+        if not response.is_success:
+            return []
+        try:
+            data = response.json()
+        except ValueError:
+            return []
         generated = data.get("response", "")
         if isinstance(generated, list):
             return [str(item) for item in generated]

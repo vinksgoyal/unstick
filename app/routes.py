@@ -1,4 +1,5 @@
 import hashlib
+import logging
 import os
 from typing import Any
 
@@ -11,6 +12,7 @@ from .models import Action, CompleteRequest, UnstickRequest, UnstickResponse
 from .storage import LocalStorage
 from .tinker_client import TinkerAdapter
 
+logger = logging.getLogger(__name__)
 router = APIRouter()
 ollama = OllamaClient()
 tinker = TinkerAdapter()
@@ -33,7 +35,8 @@ def unstick(request: UnstickRequest) -> UnstickResponse:
     try:
         behavioural_context = memory.context(state)
         candidates = ollama.candidates(request.goal, {**state, "behaviour": behavioural_context}) if ollama.is_available() else _fallback_actions()
-    except (OSError, ValueError, RuntimeError):
+    except Exception as exc:
+        logger.warning("ollama call failed, using fallback: %s", exc)
         candidates = _fallback_actions()
     passing: list[tuple[str, dict]] = []
     for candidate in candidates:
@@ -54,7 +57,7 @@ def unstick(request: UnstickRequest) -> UnstickResponse:
         start_here=Action(text=unique[0][0], constraints=unique[0][1]),
         if_you_have_15=Action(text=unique[1][0], constraints=unique[1][1], estimated_minutes=5),
         not_today={"message": "The rest of the plan exists. You don't need to see it."},
-        model_used="base-gemma2" if ollama.is_available() else "base-gemma2",
+        model_used="base-gemma2" if ollama.is_available() else "fallback",
         privacy_note=f"content stayed local (goal {goal_id})",
     )
 
