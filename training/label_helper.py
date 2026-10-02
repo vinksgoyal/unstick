@@ -13,6 +13,7 @@ Fail types:
   3 needs_decision
   4 not_physical
   5 needs_other_person
+  6 off_topic
 """
 import argparse
 import json
@@ -24,6 +25,7 @@ FAIL_TYPES = {
     "3": "needs_decision",
     "4": "not_physical",
     "5": "needs_other_person",
+    "6": "off_topic",
 }
 
 RULE = "-" * 70
