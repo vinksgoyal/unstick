@@ -1,0 +1,16 @@
+Test: store + search behavioural memory via Backboard
+
+Stored:
+{"goal_id": "test1", "energy": 2, "minutes": 15, "time_bucket": "evening",
+ "action_type": "file_rename", "completed": true}
+
+Retrieved:
+[{'id': 'd269956b-801e-4c18-880e-37de9ee00243',
+  'content': 'User has 15 minutes and energy 2 at evening. Action type: file_rename. Completed: True.',
+  'score': 0.6113448,
+  'created_at': '2026-10-03T14:41:28.264444Z'}]
+
+Notes:
+- Only abstract behavioural signals are sent to Backboard (no content text)
+- Verified via app/memory.py:allowed set enforcement in record()
+- Semantic search returns the stored signal with a relevance score
