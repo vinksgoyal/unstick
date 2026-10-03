@@ -27,19 +27,39 @@ uvicorn app.main:app --reload
 Open `frontend/index.html`. If Ollama is unavailable, the API uses safe,
 deterministic starter actions and reports model availability at `/api/health`.
 
+`APP_MODE=local` (the default) generates candidate actions with local Ollama and
+classifies them with the Tinker fine-tuned sampler when `TINKER_SAMPLER_PATH`
+is configured. Without Tinker, classification safely falls back to `safe`.
+Set `APP_MODE=hosted` to generate five candidates with Tinker as well as use
+the fine-tuned classifier. The sampler path uses the format
+`tinker://<id>/sampler_weights/unstick-classifier`.
+
 ## Deployment
 
 `render.yaml` defines an API web service and a static frontend. Set
-`ENV=production`, `TINKER_MODEL_ID`, and the verified Backboard credentials only
-after wiring their current official SDK adapters. Tinker documentation is at
+`ENV=production`, `APP_MODE=hosted`, `TINKER_SAMPLER_PATH`, and the verified
+Backboard credentials. Tinker documentation is at
 https://tinker-docs.thinkingmachines.ai/; Backboard documentation is at
-https://docs.backboard.io/. No endpoint is guessed in this scaffold.
+https://docs.backboard.io/.
+
+## Fine-tuned classifier
+
+The base Qwen3-8B classifier reached 27% accuracy on the held-out set; the
+fine-tuned sampler reached 70% accuracy. The training recipe and label-space
+definition are in
+[training/tinker_finetune.py](training/tinker_finetune.py).
+
+| Model | Accuracy |
+|---|---:|
+| Base Qwen3-8B | 27% |
+| Fine-tuned Tinker sampler | 70% |
 
 ## Training and evaluation
 
 Seed examples are in `training/seed_dataset.jsonl`; the label helper appends
-hand labels. `training/tinker_finetune.py` and `eval/run_eval.py` are safe
-placeholders until a supported Tinker recipe and held-out set are supplied.
+hand labels. `training/tinker_finetune.py` contains the LoRA training recipe,
+and `eval/run_eval.py` evaluates the base and fine-tuned samplers on the
+held-out set.
 
 ## Screenshot
 

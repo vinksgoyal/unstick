@@ -3,10 +3,12 @@ import json
 import sys
 from pathlib import Path
 
-import tinker
+import pytest
+
+tinker = pytest.importorskip("tinker")
 
 sys.path.insert(0, str(Path(__file__).parent))
-from tinker_finetune import build_datum, format_prompt, label_from_record
+from tinker_finetune import build_datum, format_prompt, label_from_record  # noqa: E402
 
 
 def test_build_datum_lengths_and_loss_mask() -> None:

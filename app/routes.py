@@ -10,14 +10,14 @@ from .llm import OllamaClient
 from .memory import BehaviourMemory
 from .models import Action, CompleteRequest, UnstickRequest, UnstickResponse
 from .storage import LocalStorage
-from .tinker_client import TinkerAdapter
+from . import tinker_client
 
 logger = logging.getLogger(__name__)
 router = APIRouter()
 ollama = OllamaClient()
-tinker = TinkerAdapter()
 memory = BehaviourMemory()
 storage = LocalStorage(os.getenv("DATABASE_PATH", "unstick.db"))
+APP_MODE = os.getenv("APP_MODE", "local").lower()
 
 
 def _fallback_actions() -> list[str]:
@@ -34,14 +34,25 @@ def unstick(request: UnstickRequest) -> UnstickResponse:
     state = request.model_dump(exclude={"goal"})
     try:
         behavioural_context = memory.context(state)
-        candidates = ollama.candidates(request.goal, {**state, "behaviour": behavioural_context}) if ollama.is_available() else _fallback_actions()
+        if APP_MODE == "hosted":
+            candidates = tinker_client.sample_candidates_sync(request.goal)
+        else:
+            candidates = (
+                ollama.candidates(
+                    request.goal, {**state, "behaviour": behavioural_context}
+                )
+                if ollama.is_available()
+                else _fallback_actions()
+            )
     except Exception as exc:
-        logger.warning("ollama call failed, using fallback: %s", exc)
+        logger.warning("candidate generation failed, using fallback: %s", exc)
         candidates = _fallback_actions()
     passing: list[tuple[str, dict]] = []
     for candidate in candidates:
-        result = tinker.classify(request.goal, state, candidate)
-        action = result.rewrite if not result.scope_safe and result.rewrite else candidate
+        classification = tinker_client.classify_sync(request.goal, candidate)
+        if not classification["scope_safe"]:
+            continue
+        action = candidate
         verdict = check(action, state)
         if verdict["passes"]:
             passing.append((action, verdict))
@@ -57,7 +68,7 @@ def unstick(request: UnstickRequest) -> UnstickResponse:
         start_here=Action(text=unique[0][0], constraints=unique[0][1]),
         if_you_have_15=Action(text=unique[1][0], constraints=unique[1][1], estimated_minutes=5),
         not_today={"message": "The rest of the plan exists. You don't need to see it."},
-        model_used="base-gemma2" if ollama.is_available() else "fallback",
+        model_used="tinker" if APP_MODE == "hosted" or tinker_client.TINKER_SAMPLER_PATH else "fallback",
         privacy_note=f"content stayed local (goal {goal_id})",
     )
 
