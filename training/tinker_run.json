@@ -1,0 +1,9 @@
+{
+  "base_model": "Qwen/Qwen3-8B",
+  "lora_rank": 16,
+  "learning_rate": 0.0001,
+  "epochs": 3,
+  "train_rows": 100,
+  "sampler_path": "tinker://cb5122bd-2ec8-56ff-922e-b9179dc77cab:train:0/sampler_weights/unstick-classifier",
+  "playground_url": "https://tinker.thinkingmachines.ai/playground?mode=checkpoint&checkpoint=tinker%3A%2F%2Fcb5122bd-2ec8-56ff-922e-b9179dc77cab%3Atrain%3A0%2Fsampler_weights%2Funstick-classifier"
+}
