@@ -36,9 +36,43 @@ the fine-tuned classifier. The sampler path uses the format
 
 ## Deployment
 
-`render.yaml` defines an API web service and a static frontend. Set
-`ENV=production`, `APP_MODE=hosted`, `TINKER_SAMPLER_PATH`, and the verified
-Backboard credentials. Tinker documentation is at
+## Deploy to Render
+
+`render.yaml` defines two services:
+
+- `unstick-api`, a free Python web service running the FastAPI backend.
+- `unstick-web`, a static site serving `frontend/`.
+
+In the API service dashboard, set these secret/configuration variables:
+
+- `TINKER_SAMPLER_PATH` — the `tinker://.../sampler_weights/unstick-classifier` path.
+- `TINKER_API_KEY` — your Tinker API key.
+- `BACKBOARD_API_KEY` — your Backboard API key.
+- `CORS_ORIGINS` — the deployed static-site origin, such as
+  `https://unstick-web.onrender.com`.
+
+The blueprint sets `APP_MODE=hosted`, so both candidate generation and
+classification use Tinker. The exact API start command is:
+
+```bash
+uvicorn app.main:app --host 0.0.0.0 --port $PORT
+```
+
+The API health check is available at `/api/health`. After the API deploys, point the `API_URL` value used by `API_BASE_URL` in
+`frontend/app.js` at its public API URL (the static site receives the service
+URL as `API_URL` when configured by Render).
+
+Test the deployed endpoint with:
+
+```bash
+curl -X POST https://unstick-api.onrender.com/api/unstick \
+  -H 'Content-Type: application/json' \
+  -d '{"goal":"start a portfolio","minutes":5,"energy":2,"location":"home","time":"21:30"}'
+```
+
+Replace the example hostname with the actual Render API URL.
+
+Tinker documentation is at
 https://tinker-docs.thinkingmachines.ai/; Backboard documentation is at
 https://docs.backboard.io/.
 
