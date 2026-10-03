@@ -2,9 +2,11 @@ services:
   - type: web
     name: unstick-api
     runtime: python
+    pythonVersion: "3.12.7"
     plan: free
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
     envVars:
       - key: APP_MODE
         value: hosted
@@ -16,6 +18,7 @@ services:
         sync: false
       - key: CORS_ORIGINS
         sync: false
+
   - type: web
     name: unstick-web
     runtime: static
