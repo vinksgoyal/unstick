@@ -1,0 +1,45 @@
+a6a7cd7 Fix frontend: three-card UI, loading/error states, relative API base
+261a8ba Wire Backboard behavioural memory (signals only, never content)
+0d7f165 Agent host session 177818fb-a6ca-41c7-be2d-f5476e619709 - turn 1
+66cea5d Agent host session 177818fb-a6ca-41c7-be2d-f5476e619709 - turn 1 start
+45e1c61 Agent host session 177818fb-a6ca-41c7-be2d-f5476e619709 - baseline checkpoint
+db22d40 Drop separate static service; FastAPI serves the frontend
+242fbbb Serve frontend from FastAPI at root; use relative API base
+7f714f2 Capture live Render deployment evidence
+c914af2 Use .python-version instead of runtime.txt for Render
+3b39000 Pin Python 3.12 on Render
+48eb0dc Fix Render Blueprint: static site is type: web + runtime: static
+c2a1b8f Prepare Render deployment: hosted mode, CORS, two-service setup
+33be99c Agent host session d5a1d459-9a19-48f0-93b5-d32eae080cc7 - turn 7
+99ce229 Agent host session d5a1d459-9a19-48f0-93b5-d32eae080cc7 - turn 7 start
+7ab29c2 Capture app output using the fine-tuned Tinker classifier
+5aafbfb Wire Tinker fine-tuned classifier into the app
+9ddba5a Agent host session d5a1d459-9a19-48f0-93b5-d32eae080cc7 - turn 6
+fb3fab9 Agent host session d5a1d459-9a19-48f0-93b5-d32eae080cc7 - turn 6 start
+26d73d6 Fine-tuned Qwen3-8B via Tinker: 27% -> 70% accuracy on held-out set
+affbe02 Fix Datum length mismatch; add smoke test for build_datum
+d940b07 Agent host session d5a1d459-9a19-48f0-93b5-d32eae080cc7 - turn 5
+e1abc52 Agent host session d5a1d459-9a19-48f0-93b5-d32eae080cc7 - turn 5 start
+fe3ee9f Agent host session d5a1d459-9a19-48f0-93b5-d32eae080cc7 - turn 4
+00c79f2 Agent host session d5a1d459-9a19-48f0-93b5-d32eae080cc7 - turn 4 start
+749d0d2 Agent host session d5a1d459-9a19-48f0-93b5-d32eae080cc7 - turn 3
+fb87b79 Agent host session d5a1d459-9a19-48f0-93b5-d32eae080cc7 - turn 3 start
+a6e03af Agent host session d5a1d459-9a19-48f0-93b5-d32eae080cc7 - turn 2
+51f660d Agent host session d5a1d459-9a19-48f0-93b5-d32eae080cc7 - turn 2 start
+f9cbb30 Agent host session d5a1d459-9a19-48f0-93b5-d32eae080cc7 - turn 1
+8300369 Agent host session d5a1d459-9a19-48f0-93b5-d32eae080cc7 - turn 1 start
+0302292 Agent host session d5a1d459-9a19-48f0-93b5-d32eae080cc7 - baseline checkpoint
+cf4d480 Day 1: dataset ready, CI green, evidence captured
+65a72a4 Add labeled dataset: 100 train, 44 held-out across 6 fail types
+03d3beb Agent host session 4de8b0e3-5d57-4107-917a-5535793c011b - turn 3
+dd26c15 Agent host session 4de8b0e3-5d57-4107-917a-5535793c011b - turn 3 start
+46948a9 Fix lint: remove unused var, remove stray f-string
+559533e Fix time constraint bug and capture base model baseline
+493310e Fix graceful degradation when Ollama returns errors
+723ac0a Agent host session 4de8b0e3-5d57-4107-917a-5535793c011b - turn 2
+69f5620 Agent host session 4de8b0e3-5d57-4107-917a-5535793c011b - turn 2 start
+9e385c3 Add package init files and villain baseline evidence
+09edd50 Agent host session 4de8b0e3-5d57-4107-917a-5535793c011b - turn 1
+fc748b4 Agent host session 4de8b0e3-5d57-4107-917a-5535793c011b - turn 1 start
+3486dd3 Agent host session 4de8b0e3-5d57-4107-917a-5535793c011b - baseline checkpoint
+7cb3fd0 Build Unstick scaffold
