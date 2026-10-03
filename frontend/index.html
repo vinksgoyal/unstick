@@ -5,9 +5,17 @@
   <main>
     <h1>Unstick</h1>
     <p class="intro">One small leaf. Nothing else.</p>
-    <textarea id="goal" placeholder="What's the thing you keep not starting?"></textarea>
-    <div class="state" aria-label="Current state"><label>Minutes <input id="minutes" type="number" value="5" min="1" max="60"></label><label>Energy <input id="energy" type="number" value="2" min="1" max="5"></label><label>Time <input id="time" type="time"></label></div>
-    <button id="unstick">Show me one leaf</button>
+    <form id="unstick-form">
+      <input id="goal" type="text" placeholder="What's the thing you keep not starting?" required>
+      <div class="state" aria-label="Current state">
+        <label>Minutes <input id="minutes" type="number" value="5" min="1" max="60" required></label>
+        <label>Energy <input id="energy" type="number" value="2" min="1" max="5" required></label>
+        <label>Location <input id="location" type="text" value="home" required></label>
+        <label>Time <input id="time" type="time"></label>
+      </div>
+      <button id="unstick" type="submit">Show me one leaf</button>
+      <p id="error" class="error" role="alert" aria-live="polite"></p>
+    </form>
     <section id="cards" aria-live="polite"></section>
   </main>
   <script src="/static/app.js"></script>

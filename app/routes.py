@@ -47,7 +47,7 @@ def unstick(request: UnstickRequest) -> UnstickResponse:
     except Exception as exc:
         logger.warning("candidate generation failed, using fallback: %s", exc)
         candidates = _fallback_actions()
-    passing: list[tuple[str, dict]] = []
+    passing: dict[str, dict] = {}
     for candidate in candidates:
         classification = tinker_client.classify_sync(request.goal, candidate)
         if not classification["scope_safe"]:
@@ -55,12 +55,12 @@ def unstick(request: UnstickRequest) -> UnstickResponse:
         action = candidate
         verdict = check(action, state)
         if verdict["passes"]:
-            passing.append((action, verdict))
+            passing.setdefault(action, verdict)
     for fallback in _fallback_actions():
         verdict = check(fallback, state)
-        if verdict["passes"] and len(passing) < 3:
-            passing.append((fallback, verdict))
-    unique = list(dict((text, verdict) for text, verdict in passing).items())[:3]
+        if verdict["passes"] and fallback not in passing and len(passing) < 3:
+            passing[fallback] = verdict
+    unique = list(passing.items())[:3]
     if len(unique) < 3:
         raise HTTPException(status_code=503, detail="Could not produce three safe actions")
     goal_id = hashlib.sha256(request.goal.encode()).hexdigest()[:16]
