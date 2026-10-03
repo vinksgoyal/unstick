@@ -16,7 +16,7 @@ services:
         sync: false
       - key: CORS_ORIGINS
         sync: false
-  - type: static
+  - type: web
     name: unstick-web
     runtime: static
     buildCommand: ""
