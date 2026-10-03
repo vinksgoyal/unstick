@@ -1,0 +1,7 @@
+API URL: https://unstick-api-c7va.onrender.com
+Health: https://unstick-api-c7va.onrender.com/api/health
+Unstick: https://unstick-api-c7va.onrender.com/api/unstick
+
+First request (cold start): ~60-90 seconds
+Subsequent requests: fast
+model_used: tinker
