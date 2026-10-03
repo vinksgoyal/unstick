@@ -1,5 +1,5 @@
 // For Render, replace this value with the deployed unstick-api URL.
-const API_BASE_URL = window.API_URL || "http://localhost:8000";
+const API_BASE_URL = window.API_URL || """";
 
 const goal = document.querySelector("#goal");
 const cards = document.querySelector("#cards");
